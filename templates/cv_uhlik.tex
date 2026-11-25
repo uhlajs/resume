@@ -1,0 +1,174 @@
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{tikz}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Link color
+\hypersetup{
+    colorlinks=true,
+    linkcolor=[RGB]{0,0.33,0.74},
+    filecolor=magenta,
+    urlcolor=RoyalBlue,
+}
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItemSimple}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheadingExtended}[6]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} -- \textit{\small#2} & \small#3 \\
+       \footnotesize#4; \footnotesize#5 & \textit{\small #6} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,topsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\definecolor{tag_background}{RGB}{234,234,234}
+\definecolor{tag_text}{RGB}{38,65,109}
+
+\newcommand\sotag[1]{%
+    \tikz[baseline]{%
+        \node[anchor=base, text=tag_text, fill=tag_background, text depth=.3mm, scale = 0.8] {#1};
+    }%
+}
+
+%-------------------------------------------
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Large \VAR{first_name} \VAR{last_name}} & \\
+  \href{\VAR{webpages}}{uhlik.me} $\cdot$
+  \href{mailto:\VAR{email_personal}}{\VAR{email_personal}} $\cdot$
+  \href{\VAR{github}}{GitHub} $\cdot$
+  \href{\VAR{gitlab}}{GitLab}
+  &
+  \\
+\end{tabular*}
+
+\vspace{5pt}
+{\small \VAR{caption}\par}
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \BLOCK{ for e in experience if 'pdf' in e.targets }
+    \resumeSubheading
+      {\VAR{e.position}}{\VAR{e.place}}
+      {\href{\VAR{e.link}}{\VAR{e.company}}}{\VAR{e.date}}
+    \par\vspace{6pt}
+    \resumeItemListStart
+      \BLOCK{ for c in e.captions }
+        \resumeItem{\VAR{c.name}}{\VAR{c.content | link_projects(project_links, c.highlights | default([]))}}
+      \BLOCK{ endfor }
+    \resumeItemListEnd
+  \BLOCK{ endfor }
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\resumeSubHeadingListStart
+  \BLOCK{ for s in skills }
+    \item\small \textbf{\VAR{s.name}}:
+    \BLOCK{ for item in s["items"] }
+      \sotag{\VAR{item}}
+    \BLOCK{ endfor }
+  \BLOCK{ endfor }
+\resumeSubHeadingListEnd
+
+\section{Education}
+\resumeSubHeadingListStart
+  \BLOCK{ for e in education }
+    \item\small \textbf{\href{\VAR{e.link}}{\VAR{e.school}}} \hfill \textit{\VAR{e.date}}\\
+    \VAR{e.type}; \VAR{e.note}
+    \BLOCK{ if e.thesis }
+      \\Thesis: \href{\VAR{e.thesis.link}}{\VAR{e.thesis.name}}
+    \BLOCK{ endif }
+  \BLOCK{ endfor }
+\resumeSubHeadingListEnd
+
+\section{Additional Experience}
+\resumeSubHeadingListStart
+  \BLOCK{ for e in additional_experience }
+    \item\small \textbf{\VAR{e.role}} --
+    \href{\VAR{e.link}}{\VAR{e.organization}} \hfill \textit{\VAR{e.date}}
+    \BLOCK{ if e.pdf_note }
+      \\\VAR{e.pdf_note | link_projects(project_links)}
+    \BLOCK{ endif }
+  \BLOCK{ endfor }
+\resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}

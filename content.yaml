@@ -1,0 +1,122 @@
+# Shared content for the one-page PDF and the slightly expanded website.
+first_name: Jan
+first_name_alt: Honza
+last_name: Uhlík
+email_personal: jan@uhlik.me
+webpages: https://uhlik.me
+github: https://github.com/uhlajs
+caption: Senior DevOps Lead specializing in Bazel build systems, CI/CD, cloud automation, developer tooling,
+  and monitoring.
+experience:
+- position: Senior DevOps Lead
+  targets:
+  - pdf
+  - html
+  company: ISEE.ai
+  link: https://isee.ai
+  place: Remote
+  date: September 2021 – Present
+  captions:
+  - name: Build
+    content: Used Bazel for builds, dependency management, caching, and custom rules across Python, C++,
+      and Rust applications. Reduced incremental builds from over an hour to under a minute and moved
+      production builds into GitLab CI/CD, delivering OCI runtime images.
+    highlights:
+    - over an hour
+    - under a minute
+  - name: Cloud
+    content: Consolidated AWS infrastructure and introduced Terraform and Terragrunt. Reduced AWS costs
+      through resource cleanup, autoscaling, and storage optimization.
+  - name: Simulation
+    content: Built cloud and CI infrastructure supporting growth from 1–5 to 1,000 concurrent real-time
+      simulations, using AWS EKS, Karpenter, and Argo Workflows. Enabled automated simulation testing
+      for merge requests and releases.
+    highlights:
+    - 1–5
+    - 1,000 concurrent real-time simulations
+  - name: Automation
+    content: Automated vehicle host provisioning and configuration with Puppet and application deployments
+      with Argo CD. Deployed Prometheus, Grafana Mimir, and Loki for monitoring, and introduced Tailscale
+      with ACLs for remote access.
+  - name: AI adoption
+    content: Integrated coding agents into infrastructure migration and internal tool development. Set
+      up agent-assisted GitLab and Terragrunt maintenance to summarize changes and assess upgrade risk,
+      with human approval before execution.
+  - name: NVIDIA Jetson
+    content: Implemented Bazel support for parallel x86 and ARM production builds and tests, using dedicated
+      on-premises NVIDIA Jetson Orin and Jetson Thor CI runners.
+additional_experience:
+- role: Linux and network administrator
+  organization: Silicon Hill
+  link: https://www.siliconhill.cz/
+  date: 2015–2022
+  content: Helped operate services for 4,000+ users, taught Linux, and helped organize InstallFest and
+    LinuxDays.
+  pdf_note: Helped organize InstallFest and LinuxDays.
+- role: Linux lecturer
+  organization: Charles University
+  link: https://www.mff.cuni.cz/en
+  date: 2021–2022
+  content: Taught Linux, shell scripting, Git, Python, and containers in NSWI177 Introduction to Linux.
+- role: Programming lecturer
+  organization: Stanford University & CTU
+  link: https://fit.cvut.cz/en
+  date: Summers 2019–2020
+  content: Taught introductory Python and Java to high school students.
+education:
+- school: Charles University
+  link: https://www.mff.cuni.cz/en
+  type: Master of Computer Science and Artificial Intelligence
+  date: 2019–2021
+  note: Graduated with honours
+  thesis:
+    name: Cooperative Multi-Agent Reinforcement Learning
+    link: https://git.uhlik.me/mff/master-thesis
+- school: Czech Technical University
+  link: https://fit.cvut.cz/en
+  type: Bachelor of Computer Science
+  date: 2015–2018
+  note: Graduated with honours
+skills:
+- name: Build and software
+  items:
+  - Bazel
+  - Python
+  - Bash
+- name: Infrastructure
+  items:
+  - AWS
+  - GCP
+  - Kubernetes
+  - Karpenter
+  - Docker / OCI
+  - Linux
+  - Tailscale
+- name: Automation
+  items:
+  - Argo CD
+  - Argo Workflows
+  - Terraform / Terragrunt
+  - GitLab CI/CD
+  - Puppet
+- name: Monitoring
+  items:
+  - Prometheus
+  - Grafana Mimir
+  - Loki
+- name: Languages
+  items:
+  - Czech (native)
+  - English (professional working proficiency)
+project_links:
+  Bazel: https://bazel.build/
+  Karpenter: https://karpenter.sh/
+  NVIDIA Jetson Orin: https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/
+  Jetson Thor: https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-thor/
+  rules_py: https://github.com/aspect-build/rules_py
+  rules_oci: https://github.com/bazel-contrib/rules_oci
+  Tailscale: https://tailscale.com/
+  rules_nickel: https://github.com/nickel-lang/rules_nickel
+  InstallFest: https://installfest.cz/if26/
+  LinuxDays: https://www.linuxdays.cz/2019/en/
+gitlab: https://git.uhlik.me/juhlik

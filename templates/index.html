@@ -38,12 +38,13 @@
           <div class="header-actions">
             <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
               <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-moon" /></svg>
+              <span class="theme-label">Dark mode</span>
             </button>
             <button id="menu-toggle" type="button" class="menu-toggle" aria-label="Open contact menu" aria-expanded="false" aria-controls="contact-menu">
               <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-menu" /></svg>
             </button>
           </div>
-          <nav id="contact-menu" aria-label="Contact and downloads" class="contact-links">
+          <nav id="contact-menu" aria-label="Contact, downloads, and appearance" class="contact-links">
             <a href="mailto:{{ email_personal }}"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-mail" /></svg><span>Email</span></a>
             <a href="{{ gitlab }}"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-gitlab" /></svg><span>GitLab</span></a>
             <a href="{{ github }}"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github" /></svg><span>GitHub</span></a>

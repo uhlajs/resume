@@ -25,6 +25,7 @@
       button.setAttribute("aria-label", label);
       button.setAttribute("title", label);
       button.setAttribute("aria-pressed", String(theme === "dark"));
+      button.querySelector(".theme-label").textContent = theme === "dark" ? "Light mode" : "Dark mode";
       button.querySelector("use").setAttribute("href", theme === "dark" ? "#icon-sun" : "#icon-moon");
     }
   }
@@ -38,6 +39,8 @@
     const menuButton = document.getElementById("menu-toggle");
     const navigation = document.getElementById("contact-menu");
     const mobile = window.matchMedia("(max-width: 575px)");
+    const themeButton = document.getElementById("theme-toggle");
+    const headerActions = document.querySelector(".header-actions");
 
     function setMenuOpen(open) {
       if (!open && mobile.matches && navigation.contains(document.activeElement)) {
@@ -49,7 +52,17 @@
       menuButton.querySelector("use").setAttribute("href", open ? "#icon-close" : "#icon-menu");
     }
 
-    setMenuOpen(false);
+    function updateHeaderLayout() {
+      const focused = document.activeElement;
+      if (mobile.matches) navigation.append(themeButton);
+      else headerActions.prepend(themeButton);
+      setMenuOpen(false);
+      if (focused === themeButton || (!mobile.matches && focused === menuButton)) {
+        (mobile.matches ? menuButton : themeButton).focus();
+      }
+    }
+
+    updateHeaderLayout();
     header.setAttribute("data-navigation-ready", "");
     menuButton.addEventListener("click", () => {
       setMenuOpen(menuButton.getAttribute("aria-expanded") !== "true");
@@ -69,12 +82,7 @@
     header.addEventListener("focusout", (event) => {
       if (event.relatedTarget && !header.contains(event.relatedTarget)) setMenuOpen(false);
     });
-    mobile.addEventListener("change", () => {
-      if (!mobile.matches && document.activeElement === menuButton) {
-        document.getElementById("theme-toggle").focus();
-      }
-      setMenuOpen(false);
-    });
+    mobile.addEventListener("change", updateHeaderLayout);
 
     document.getElementById("theme-toggle").addEventListener("click", () => {
       preference = document.documentElement.getAttribute("data-bs-theme") === "dark"

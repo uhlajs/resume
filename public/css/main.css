@@ -68,6 +68,7 @@ a:hover { text-decoration: underline; }
 .theme-toggle:hover, .menu-toggle:hover { background: var(--resume-header-hover); border-color: var(--resume-header-rule); }
 .theme-toggle:focus-visible, .menu-toggle:focus-visible { outline-color: var(--resume-header-ink); }
 .theme-toggle:active, .menu-toggle:active, .pdf-link:active { transform: scale(.97); }
+.theme-label { display: none; }
 .menu-toggle { display: none; }
 .intro { padding-block: 32px 4px; }
 .summary { max-width: none; margin: 0; font-size: 1.125rem; line-height: 1.6; color: var(--resume-muted); }
@@ -132,7 +133,8 @@ strong, dt { font-weight: 600; }
   .site-header[data-navigation-ready] .contact-links { display: none; }
   .site-header[data-menu-open="true"] .contact-links { display: grid; }
   .contact-links .icon { width: 16px; height: 16px; }
-  .theme-toggle { margin-left: 0; }
+  .contact-links .theme-toggle { width: 100%; justify-content: flex-start; gap: 8px; padding: 8px; font: inherit; }
+  .contact-links .theme-label { display: inline; }
 
   .intro { padding-block: 24px 0; }
   .summary { font-size: 1rem; }

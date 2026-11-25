@@ -10,3 +10,5 @@ A concise professional resume for engineering readers. Keep the established blue
 - Native 44px sun/moon button with an accessible action label and pressed state. Respect system preference before manual selection; remember a manual choice when storage is available.
 - Small gray badges with blue text, 12px/500, 4px 8px padding, 2px radius, 6px gap. Only Technical skills uses badges. Keep skill group labels beside badges on desktop and above them on mobile.
 - On narrow screens, put the theme button alongside the identity and allow the contact links to wrap below. Stack entry metadata, keep links keyboard-accessible, and prevent horizontal overflow.
+
+- Favicon: white profile outline on the established blue rounded square. Keep the SVG and 512px PNG fallback visually identical; use the SVG for crisp rendering at small sizes.

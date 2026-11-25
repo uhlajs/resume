@@ -9,6 +9,6 @@ A concise professional resume for engineering readers. Keep the established blue
 - One blue accent. Links and keyboard focus use it. Keep all theme colors in `--resume-*` variables; dark paper is `#20262e`, ink `#edf0f4`, and links `#8bbcff`.
 - Native 44px sun/moon button with an accessible action label and pressed state. Respect system preference before manual selection; remember a manual choice when storage is available.
 - Small gray badges with blue text, 12px/500, 4px 8px padding, 2px radius, 6px gap. Only Technical skills uses badges. Keep skill group labels beside badges on desktop and above them on mobile.
-- On narrow screens, put the theme button alongside the identity and allow the contact links to wrap below. Stack entry metadata, keep links keyboard-accessible, and prevent horizontal overflow.
+- Below 576px, use a deliberate two-row contact grid: Email/GitLab/GitHub, then Public key/PDF resume. Keep DOM and visual order identical. Each link is at least 44px tall, with inline 16px icons and 14px labels. Use a quiet header divider, 16px side gutters, a 56px portrait, 12px identity gap, and the 44px theme button beside the name. Keep desktop header sizing and layout unchanged. Stack entry metadata, keep links keyboard-accessible, and prevent horizontal overflow.
 
 - Favicon: white profile outline on the established blue rounded square. Keep the SVG and 512px PNG fallback visually identical; use the SVG for crisp rendering at small sizes.

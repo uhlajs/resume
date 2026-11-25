@@ -31,7 +31,7 @@ Use English link destinations when available. LinuxDays links to its official 20
 
 ## Publish
 
-The canonical source is [uhlajs/resume](https://github.com/uhlajs/resume), on the `main` branch. Pushes to `main` run [.github/workflows/pages.yml](.github/workflows/pages.yml): repository checks, website/PDF build, Pages artifact upload, and deployment through the `github-pages` environment. Pull requests build and check without deploying. The workflow can also be started manually.
+The canonical source is [uhlajs/resume](https://github.com/uhlajs/resume), on the `main` branch. Pushes to `main` run [.github/workflows/pages.yml](.github/workflows/pages.yml): repository checks, website/PDF build, Pages artifact upload, and deployment through the `github-pages` environment. Pull requests build and check without deploying. The workflow can also be started manually. Tectonic packages are cached between runs; cold builds retry HTTP 429 package-download failures with increasing delays.
 
 GitHub Pages must use GitHub Actions as its publishing source. The temporary host is https://uhlajs.github.io/resume/; the custom domain is `uhlik.me`, configured in the repository's Pages settings. Update DNS only after a successful deployment. Enable HTTPS enforcement once GitHub has issued the custom-domain certificate.
 
